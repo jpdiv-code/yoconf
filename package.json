@@ -1,0 +1,34 @@
+{
+  "name": "yoconf",
+  "version": "1.0.0",
+  "description": "YAML Object Configuration",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha tests"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jpdiv-code/yoconf.git"
+  },
+  "keywords": [
+    "yaml",
+    "object",
+    "obj",
+    "confiuration",
+    "config",
+    "conf"
+  ],
+  "author": "jpdiv-code",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jpdiv-code/yoconf/issues"
+  },
+  "homepage": "https://github.com/jpdiv-code/yoconf#readme",
+  "devDependencies": {
+    "mocha": "^6.2.0"
+  },
+  "dependencies": {
+    "dotenv": "^8.0.0",
+    "yaml": "^1.6.0"
+  }
+}
