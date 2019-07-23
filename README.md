@@ -1,0 +1,2 @@
+# yoconf
+YAML Object Configuration
