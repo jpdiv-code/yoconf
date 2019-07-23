@@ -2,6 +2,7 @@
 
 const fs = require('fs');
 const dotenv = require('dotenv');
+const yaml = require('yaml');
 
 module.exports = class YOConf {
     /**
