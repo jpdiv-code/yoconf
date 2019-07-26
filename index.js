@@ -29,12 +29,20 @@ module.exports = class YOConf {
         const argv = process.argv.slice(2);
         const env = process.env;
         this.dict = Object.create(null);
-        for (let key in defaultConfig) {
-            this.dict[key] = defaultConfig[key];
-        }
-        for (let key in profileConfig) {
-            this.dict[key] = profileConfig[key];
-        }
+        const buildDict = (value, path) => {
+            path = path || [];
+            if (typeof value === 'object') {
+                for (let key in value) {
+                    path.push(key);
+                    buildDict(value[key], path);
+                    path.pop();
+                }
+            } else {
+                this.dict[path.join('.')] = value;
+            }
+        };
+        buildDict(defaultConfig);
+        buildDict(profileConfig);
         for (let key in env) {
             this.dict[key] = env[key];
         }
