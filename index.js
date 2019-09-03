@@ -82,7 +82,7 @@ module.exports = class YOConf {
             let value = this.dict[key];
             try {
                 value = JSON.parse(value);
-            } catch { }
+            } catch (err) { }
             cur[path[0]] = value;
         }
         this.loaded = true;
