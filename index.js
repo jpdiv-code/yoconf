@@ -22,7 +22,9 @@ module.exports = class YOConf {
             return this;
         }
         dotenv.config();
-        const configurations = yaml.parse(fs.readFileSync(this.file).toString());
+        const configurations = yaml.parse(fs.readFileSync(this.file).toString(), {
+            mapAsMap: true,
+        });
         const profile = process.env.NODE_ENV || 'dev';
         const defaultConfig = configurations['default'];
         const profileConfig = configurations[profile];
